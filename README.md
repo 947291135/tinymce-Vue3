@@ -2,7 +2,7 @@
 
 > 基于Vue3/element 重构后台思路
 
-[上个版本tinymce（Vue2）](http://panjiachen.github.io/vue-admin-template)
+[上个版本tinymce（Vue2）](https://github.com/947291135/tinymce)
 
 ## Build Setup
 

@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
+import './assets/css/index.scss';
 // 添加router
 import Router from '/@/router/index';
 

@@ -7,8 +7,20 @@ export default createRouter({
     routes:[
         {
             path: '/',
-            component: () => import('../components/firet.vue'),
-            name: 'Index'
+            component: () => import('../components/layout/index.vue'),
+            redirect: '/main',
+            name: 'Index',
+            children: [
+                {
+                  path: '/main',
+                  component: () => import('../view/main.vue'),
+                  name: 'main',
+                  meta: {
+                    title: '首页',
+                    activeMenu: '/'
+                  }
+                }
+            ]
         },
         {
             path: '/hw',

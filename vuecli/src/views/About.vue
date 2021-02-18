@@ -1,5 +1,25 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <div>{{ nowTime }}</div>
   </div>
 </template>
+
+<script lang="ts">
+import { nowTime, getTime } from "@assets/js/getTime";
+import { onUnmounted } from "vue";
+export default {
+  setup() {
+    getTime();
+    const Time = setInterval(() => {
+      getTime();
+    }, 1000);
+    // 离开页面时关闭清除定时器
+    onUnmounted(() => {
+      clearInterval(Time);
+    });
+    return {
+      nowTime
+    };
+  }
+};
+</script>

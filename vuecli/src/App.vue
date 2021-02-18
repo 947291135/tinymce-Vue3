@@ -1,10 +1,19 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/IMG">Img</router-link>
   </div>
   <router-view />
 </template>
+
+<script lang="ts">
+export default {
+  // components: {
+  //   Teleports
+  // }
+};
+</script>
 
 <style lang="scss">
 #app {

@@ -12,6 +12,8 @@
       </button>
     </div>
     <div>您选择了【{{ selectText }}】套餐</div>
+    <button @click="overClick">点餐完成</button>
+    <div>{{ overText }}</div>
   </div>
 </template>
 
@@ -20,10 +22,13 @@ import {
   ref,
   reactive,
   toRefs,
-  onMounted,
-  onBeforeMount,
-  onBeforeUpdate,
-  onUpdated,
+  // onMounted,
+  // onBeforeMount,
+  // onBeforeUpdate,
+  // onUpdated,
+  // onRenderTracked,
+  // onRenderTriggered,
+  watch
 } from "vue";
 // 新建接口规范data
 interface DataProps {
@@ -47,23 +52,43 @@ export default {
       selectText: "",
       selectFn(index: number) {
         this.selectText = this.option[index];
-      },
+      }
+    });
+    const overText = ref("红浪漫");
+    const overClick = () => {
+      overText.value = "点餐完成: 红浪漫" + data.selectText;
+    };
+
+    watch([overText, () => data.selectText], (newVal, oldVal) => {
+      console.log(newVal);
+      console.log(oldVal);
+      document.title = newVal[0].toString();
     });
 
-    onBeforeMount(() => {
-      console.log("2-组件挂载到页面之前执行-----onBeforeMount()");
-    });
+    // onBeforeMount(() => {
+    //   console.log("2-组件挂载到页面之前执行-----onBeforeMount()");
+    // });
 
-    onMounted(() => {
-      console.log("3-组件挂载到页面之后执行-----onMounted()");
-    });
-    onBeforeUpdate(() => {
-      console.log("4-组件更新之前-----onBeforeUpdate()");
-    });
+    // onMounted(() => {
+    //   console.log("3-组件挂载到页面之后执行-----onMounted()");
+    // });
+    // onBeforeUpdate(() => {
+    //   console.log("4-组件更新之前-----onBeforeUpdate()");
+    // });
 
-    onUpdated(() => {
-      console.log("5-组件更新之后-----onUpdated()");
-    });
+    // onUpdated(() => {
+    //   console.log("5-组件更新之后-----onUpdated()");
+    // });
+
+    // onRenderTracked(event => {
+    //   console.log("状态更新钩子");
+    //   console.log(event);
+    // });
+
+    // onRenderTriggered(event => {
+    //   console.log("状态更新钩子2");
+    //   console.log(event);
+    // });
 
     // 最后通过return 出去，需要暴露的属性和方法 return出去，不需要的内置方法和属性则不用暴露
     return {
@@ -74,7 +99,9 @@ export default {
 
       //第二种写法
       ...toRefs(data),
+      overText,
+      overClick
     };
-  },
+  }
 };
 </script>

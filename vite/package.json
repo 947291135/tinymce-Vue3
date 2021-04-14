@@ -6,8 +6,10 @@
     "build": "vite build"
   },
   "dependencies": {
+    "element-plus": "^1.0.2-beta.39",
     "vue": "^3.0.2",
-    "vue-router": "^4.0.0-beta.13"
+    "vue-router": "^4.0.0-beta.13",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "sass": "^1.29.0",

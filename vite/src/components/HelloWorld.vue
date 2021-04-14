@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { setup } from 'vue'
 export default {
   name: 'HelloWorld',
   props: {

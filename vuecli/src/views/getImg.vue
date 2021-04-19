@@ -25,7 +25,7 @@
 <script lang="ts">
 import Teleports from "@/components/Teleport.vue";
 import Suspenses from "@/components/Suspense.vue";
-import useUrl from "@assets/js/useUrl";
+import useUrl from "@/assets/js/useUrl";
 export default {
   components: {
     Teleports,

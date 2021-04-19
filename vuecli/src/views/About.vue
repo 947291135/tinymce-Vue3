@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { nowTime, getTime } from "@assets/js/getTime";
+import { nowTime, getTime } from "@/assets/js/getTime";
 import { onUnmounted } from "vue";
 export default {
   setup() {

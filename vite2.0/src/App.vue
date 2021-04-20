@@ -10,6 +10,7 @@ export default defineComponent({
   name: 'App',
   setup(){
     let store = useStore()
+    
     console.log(store.state)
   }
 })

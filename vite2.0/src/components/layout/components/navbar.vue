@@ -68,7 +68,7 @@ export default {
         }
     },
     created () {
-        console.log(this.isRouter)
+        // console.log(this.isRouter)
     },
     computed: {
         isRouter(){

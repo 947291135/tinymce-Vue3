@@ -8,13 +8,12 @@ import { useStore } from 'vuex'
 
 export default defineComponent({
   name: 'App',
-  setup(){
+  setup() {
     let store = useStore()
-    
+
     console.log(store.state)
   }
 })
 </script>
 
-<style>
-</style>
+<style></style>

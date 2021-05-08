@@ -9,7 +9,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, computed} from 'vue'
+import { defineComponent, computed, reactive} from 'vue'
 import {app} from '@hooks/app'
 export default defineComponent({
       setup() {

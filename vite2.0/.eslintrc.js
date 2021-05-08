@@ -5,14 +5,14 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   extends: [
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     '@typescript-eslint/ban-ts-ignore': 'off',
@@ -45,20 +45,19 @@ module.exports = {
       'error',
       {
         argsIgnorePattern: '^h$',
-        varsIgnorePattern: '^h$'
-      }
+        varsIgnorePattern: '^h$',
+      },
     ],
     'no-unused-vars': [
       'error',
       {
         argsIgnorePattern: '^h$',
-        varsIgnorePattern: '^h$'
-      }
+        varsIgnorePattern: '^h$',
+      },
     ],
     'space-before-function-paren': 'off',
-    quotes: ['error', 'single'],
-    'comma-dangle': ['error', 'never'],
-    endOfLine: "auto",
-    'no-multiple-template-root': 0
-  }
-}
+    quotes: [0, 'single'],
+    'comma-dangle': [0, 'never'],
+    'no-multiple-template-root': 0,
+  },
+};

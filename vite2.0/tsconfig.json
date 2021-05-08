@@ -16,6 +16,9 @@
       ],
       "@hooks/*": [
         "./src/hooks/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
       ]
     },
     "typeRoots": [

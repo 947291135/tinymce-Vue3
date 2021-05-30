@@ -11,14 +11,22 @@ export default [
         name: 'main',
         meta: {
           title: '首页',
-          activeMenu: '/'
-        }
-      }
-    ]
+          activeMenu: '/',
+        },
+      },
+      {
+        path: '/internationalization',
+        component: () => import('../view/internationalization.vue'),
+        name: 'internationalization',
+        meta: {
+          title: '国际化',
+        },
+      },
+    ],
   },
   {
     path: '/hw',
     component: () => import('../components/HelloWorld.vue'),
-    name: 'HelloWorld'
-  }
-]
+    name: 'HelloWorld',
+  },
+];

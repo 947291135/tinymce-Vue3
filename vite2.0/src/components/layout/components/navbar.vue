@@ -1,87 +1,40 @@
 <template>
   <div class="navbar-centent">
-    <div v-for="(item, index) of router" :key="index" class="navbar-group">
-      <div class="navbar-group-title">{{ item.meta.title }}</div>
-      <div
-        v-for="(items, indexs) of item.children"
-        :key="index + '-' + indexs"
-        class="navbar-group-item"
-      >
-        <router-link :to="items.path" :class="{ active: isRouter === items.path }">{{
-          items.meta.title
-        }}</router-link>
-      </div>
-    </div>
+    <el-menu
+      :unique-opened="true"
+      default-active="2"
+      class="el-menu-vertical-demo"
+      background-color="#001938"
+      text-color="#fff"
+      active-text-color="#ffd04b"
+      router
+      @open="handleOpen"
+      @close="handleClose"
+    >
+      <template v-for="(item, index) of RouterFirst" :key="index">
+        <el-submenu v-if="item.children && item.children.length > 0" :index="item.path">
+          <template #title>
+            <i class="el-icon-location"></i>
+            <span>{{ item.meta.title }}</span>
+          </template>
+          <template v-for="(items, indexs) of item.children" :key="index + '-' + indexs">
+            <el-menu-item :index="items.path">{{ items.meta.title }}</el-menu-item>
+          </template>
+        </el-submenu>
+        <el-menu-item v-else :index="item.path">
+          <i class="el-icon-menu"></i>
+          <template #title>{{ item.meta.title }}</template>
+        </el-menu-item>
+      </template>
+    </el-menu>
   </div>
 </template>
 
-<script>
-  export default {
-    data() {
-      return {
-        router: [
-          {
-            meta: {
-              title: '开发指南',
-            },
-            children: [
-              {
-                path: '/main',
-                meta: {
-                  title: '介绍',
-                },
-              },
-              {
-                path: '/hw',
-                meta: {
-                  title: '快速上手',
-                },
-              },
-              {
-                path: '/internationalization',
-                meta: {
-                  title: '国际化',
-                },
-              },
-            ],
-          },
-          {
-            meta: {
-              title: '开发指南',
-            },
-            children: [
-              {
-                path: '/main',
-                meta: {
-                  title: '介绍',
-                },
-              },
-              {
-                path: '/main',
-                meta: {
-                  title: '快速上手',
-                },
-              },
-              {
-                path: '/main',
-                meta: {
-                  title: '国际化',
-                },
-              },
-            ],
-          },
-        ],
-      };
-    },
-    computed: {
-      isRouter() {
-        return this.$route.path;
-      },
-    },
-    created() {
-      // console.log(this.isRouter)
-    },
-  };
+<script lang="ts" setup>
+  import { useRouter } from 'vue-router';
+  const Router = useRouter();
+  const RouterFirst = Router.options?.routes[0]?.children;
+  console.log(RouterFirst);
 </script>
 
 <style lang="scss" scoped>
@@ -89,30 +42,5 @@
     width: 100%;
     height: 100%;
     position: relative;
-    .navbar-group {
-      margin-bottom: 16px;
-      .navbar-group-title {
-        padding: 8px 0 8px 30px;
-        color: #455a64;
-        font-weight: 600;
-        font-size: 15px;
-        user-select: none;
-        line-height: 28px;
-      }
-      .navbar-group-item a {
-        display: block;
-        margin: 0;
-        padding: 8px 0 8px 30px;
-        color: #455a64;
-        font-size: 13px;
-        line-height: 28px;
-        -webkit-transition: color 0.2s;
-        transition: color 0.2s;
-        text-decoration: none;
-        &:hover {
-          color: #4fc08d;
-        }
-      }
-    }
   }
 </style>

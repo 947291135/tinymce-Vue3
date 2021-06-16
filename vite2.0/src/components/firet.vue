@@ -6,23 +6,12 @@
 -->
 <template>
   <div> 组件</div>
+  <el-button type="primary" @click="clickFn">主要按钮</el-button>
 </template>
 
-<script lang="ts">
-  import { defineComponent, reactive, toRefs, onBeforeMount, onMounted } from 'vue';
-  interface DataProps {}
-  export default defineComponent({
-    setup() {
-      console.log(import.meta.env.MODE);
-      onBeforeMount(() => {
-        console.log('2.组件挂载页面之前执行----onBeforeMount');
-      });
-      onMounted(() => {
-        console.log('3.-组件挂载到页面之后执行-------onMounted');
-      });
-
-      return {};
-    },
-  });
+<script lang="ts" setup>
+  const clickFn = () => {
+    console.log(123);
+  };
 </script>
 <style lang="scss" scoped></style>

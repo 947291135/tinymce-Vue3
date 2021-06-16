@@ -1,8 +1,9 @@
 <template>
-  <div class="firet">
-    <el-input v-model="app.text"></el-input>
+  <div class="main">
+    <router-view></router-view>
+    <!-- <el-input v-model="app.text"></el-input>
     <canvas ref="canvas"></canvas>
-    <Text />
+    <Text /> -->
   </div>
 </template>
 
@@ -53,3 +54,9 @@
     },
   });
 </script>
+
+<style lang="scss" scoped>
+  // .firet {
+  //   margin-top: 10px;
+  // }
+</style>

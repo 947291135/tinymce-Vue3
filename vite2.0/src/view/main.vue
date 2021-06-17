@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-  import { app } from '@hooks/app';
+  import { datas, setDatas } from '@hooks/app';
   import Text from '@/components/view/main/text.vue';
   import { defineComponent, ref, reactive, onMounted, watch } from 'vue';
   import { toCanvas } from 'qrcode';
@@ -49,7 +49,7 @@
       });
       return {
         canvas,
-        app,
+        datas,
       };
     },
   });

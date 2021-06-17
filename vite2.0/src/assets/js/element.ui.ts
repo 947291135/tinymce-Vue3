@@ -7,6 +7,8 @@ import {
   ElSelect,
   ElInput,
   ElMessageBox,
+  ElCard,
+  ElAvatar,
 } from 'element-plus';
 
 export const components: any[] = [
@@ -18,5 +20,7 @@ export const components: any[] = [
   ElButton,
   ElSelect,
   ElInput,
+  ElCard,
+  ElAvatar,
 ];
 export const plugins: any[] = [ElMessageBox];

@@ -34,7 +34,6 @@
   import { useRouter } from 'vue-router';
   const Router = useRouter();
   const RouterFirst = Router.options?.routes[0]?.children;
-  console.log(RouterFirst);
 </script>
 
 <style lang="scss" scoped>

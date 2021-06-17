@@ -36,6 +36,7 @@
   let imgUrl = getters.img;
   // 不可修改
   // datas.userName = 123;
+
   let img = computed(() => {
     console.log(getters.img);
     return datas.userImg || 'https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png';
@@ -48,7 +49,7 @@
     DialogVisible.value = false;
   };
   const update = () => {
-    setDatas('userName', '小明');
+    setDatas('userName', '小何');
     setDatas('userImg', 'https://img.mgblog.cn/ee69f34f5e4545b92d8fff0b25d944a8.jpg');
     setDatas('id', 123);
   };
@@ -58,9 +59,11 @@
     position: relative;
     width: 100%;
     height: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    overflow-y: auto;
     .box-card {
       width: 250px;
-      margin: 25px;
       display: flex;
       ::v-deep .el-card__body {
         width: 100%;

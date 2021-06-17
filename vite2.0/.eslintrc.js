@@ -59,5 +59,7 @@ module.exports = {
     quotes: [0, 'single'],
     'comma-dangle': [0, 'never'],
     'no-multiple-template-root': 0,
+    'no-unused-vars': 0,
+    '@typescript-eslint/no-unused-vars': 0,
   },
 };

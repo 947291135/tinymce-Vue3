@@ -9,11 +9,13 @@ import {
   ElMessageBox,
   ElCard,
   ElAvatar,
+  ElForm,
+  ElFormItem,
+  ElDialog,
 } from 'element-plus';
 
 export const components: any[] = [
   ElMenu,
-  ElMenuItem,
   ElSlider,
   ElSubmenu,
   ElMenuItem,
@@ -22,5 +24,8 @@ export const components: any[] = [
   ElInput,
   ElCard,
   ElAvatar,
+  ElForm,
+  ElFormItem,
+  ElDialog,
 ];
 export const plugins: any[] = [ElMessageBox];

@@ -5,16 +5,21 @@
  *@version: V1.0.5
 -->
 <template>
-  <div>123</div>
+  <div>
+    <el-form ref="form" label-width="80px">
+      <el-form-item label="是否展开">
+        <el-switch v-model="data" active-color="#13ce66" inactive-color="#ff4949" @change="setOpen">
+        </el-switch>
+      </el-form-item>
+    </el-form>
+  </div>
 </template>
 
-<script lang="ts">
-  import { defineComponent, reactive, toRefs, onBeforeMount, onMounted } from 'vue';
-  interface DataProps {}
-  export default defineComponent({
-    setup() {
-      return {};
-    },
-  });
+<script lang="ts" setup>
+  import { data, setDatas } from '@/hooks/system';
+  import _ from 'lodash';
+  function setOpen() {
+    setDatas(!data.value);
+  }
 </script>
 <style lang="scss" scoped></style>

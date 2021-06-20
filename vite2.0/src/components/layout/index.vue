@@ -41,14 +41,14 @@
       background: #fafafa;
       .sidebar {
         width: 100%;
-        flex: 0 0 60px;
+        flex: 0 0 auto;
         overflow: hidden;
         position: relative;
         background: #fff;
         display: flex;
         align-items: center;
         box-sizing: border-box;
-        padding: 0 10px;
+        padding-right: 10px;
         box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
         color: #fff;
         box-shadow: 0 8px 0px #ebedf0;
@@ -61,7 +61,7 @@
     }
     .navbar {
       height: 100%;
-      width: 210px;
+      flex: 0 0 auto;
       background-color: #fff;
       box-sizing: border-box;
       background-color: #001938;

@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "element-plus": "^1.0.2-beta.39",
+    "lodash": "^4.17.21",
     "qrcode": "^1.4.4",
     "sass": "^1.32.10",
     "vue": "^3.0.5",

@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-centent">
+  <div :class="['navbar-centent', { isOpen: !data }]">
     <el-menu
       :unique-opened="true"
       :default-active="activeIndex"
@@ -7,6 +7,7 @@
       background-color="#001938"
       text-color="#fff"
       active-text-color="#ffd04b"
+      :collapse="data"
       router
     >
       <template v-for="(item, index) of RouterList" :key="index">
@@ -34,6 +35,7 @@
 </template>
 
 <script lang="ts" setup>
+  import { data } from '@/hooks/system';
   import { computed } from '@vue/runtime-core';
   import { useRouter, useRoute } from 'vue-router';
   const Router = useRouter();
@@ -52,9 +54,13 @@
     width: 100%;
     height: 100%;
     position: relative;
+    transition: width 0.5s;
+    width: 65px;
+    &.isOpen {
+      width: 200px;
+    }
     .el-menu-vertical-demo {
-      border-right: none;
-      user-select: none;
+      border-right-color: #001938;
     }
     .el-submenu.is-active span,
     .el-submenu.is-active i {

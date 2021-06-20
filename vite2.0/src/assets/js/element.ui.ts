@@ -12,6 +12,7 @@ import {
   ElForm,
   ElFormItem,
   ElDialog,
+  ElSwitch,
 } from 'element-plus';
 
 export const components: any[] = [
@@ -27,5 +28,6 @@ export const components: any[] = [
   ElForm,
   ElFormItem,
   ElDialog,
+  ElSwitch,
 ];
 export const plugins: any[] = [ElMessageBox];
